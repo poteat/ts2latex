@@ -1,6 +1,6 @@
 {
   "name": "ts2latex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert TypeScript to LaTeX algorithm format",
   "main": "lib/ts2latex.mjs",
   "scripts": {
