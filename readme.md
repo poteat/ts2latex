@@ -1,8 +1,8 @@
 # ts2latex
 
-Convert TS to LaTeX algorithm format. Supports only a small subset of the
-general TypeScript syntax, and is intended to be an easier way to write
-psuedocode for LaTeX-written academic documents.
+Convert TypeScript to LaTeX algorithm format. Supports only a small subset of
+the general TS syntax, and is intended to be an easier way to write psuedocode
+for LaTeX-written academic documents.
 
 ## Installation
 

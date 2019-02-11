@@ -4,7 +4,7 @@
   "description": "Convert TypeScript to LaTeX algorithm format",
   "main": "lib/ts2latex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./cmd.js test/1.ts"
   },
   "keywords": [
     "typescript",

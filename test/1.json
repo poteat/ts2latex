@@ -17,20 +17,20 @@
   "code": [
     {
       "elementType": "declaration",
-      "index": 219,
+      "index": 34,
       "name": "alpha",
       "type": "boolean",
       "rhs": "true"
     },
     {
       "elementType": "assignment",
-      "index": 248,
+      "index": 63,
       "name": "alpha",
       "rhs": "false"
     },
     {
       "elementType": "forOfBlock",
-      "index": 264,
+      "index": 79,
       "item": "x_i",
       "collection": "x",
       "code": [
@@ -50,7 +50,7 @@
     },
     {
       "elementType": "returnStatement",
-      "index": 343,
+      "index": 158,
       "name": "x"
     }
   ]
