@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "Convert TypeScript to LaTeX algorithm format",
   "main": "dist/ts2latex.min.js",
+  "browser": "browser/ts2latex.min.js",
   "scripts": {
     "build": "node ./node_modules/rollup/bin/rollup -c",
     "test": "node --experimental-modules cmd.mjs test/1.ts"

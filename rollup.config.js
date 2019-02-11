@@ -7,7 +7,7 @@ export default [
   {
     input: "src/ts2latex.mjs",
     output: {
-      file: pkg.main,
+      file: pkg.browser,
       name: "ts2latex",
       format: "umd"
     },
