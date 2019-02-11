@@ -2,9 +2,9 @@
   "name": "ts2latex",
   "version": "1.0.0",
   "description": "Convert TypeScript to LaTeX algorithm format",
-  "main": "lib/ts2latex.js",
+  "main": "lib/ts2latex.mjs",
   "scripts": {
-    "test": "node ./cmd.js test/1.ts"
+    "test": "node --experimental-modules ./cmd.mjs test/1.ts"
   },
   "keywords": [
     "typescript",

@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const args = require("minimist")(process.argv.slice(2));
-const ts2latex = require("./lib/ts2latex.js");
+import fs from "fs";
+import minimist from "minimist";
+import ts2latex from "./lib/ts2latex.mjs";
 
-const path = args._[0];
+const path = minimist(process.argv.slice(2))._[0];
 const ext = /(?<=\.)[^.]*?$/;
 const dir = /(?<=\/)[^\/]*?$/;
 
 if (!path) {
   console.log("Usage: ./cmd.js [filename]");
-  return;
 }
 
 fs.readFile(path, "utf8", (err, data) => {
