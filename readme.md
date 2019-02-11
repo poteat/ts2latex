@@ -18,7 +18,7 @@ To use as a library, save as a dependency:
 
 If installed globally, the following (e.g) will work:
 
-    md2latex docs/example.md
+    ts2latex test/1.ts
 
 The API is a single function which takes in correctly formatted TypeScript code,
 and returns, optionally, both the JSON and LaTeX conversions of the code.
@@ -66,3 +66,7 @@ function A(x: Array<number>, y) {
 
 Some greek name variables will be converted to their respective LaTeX symbol.
 If more are needed for your application, feel free to make a pull request.
+
+## License
+
+MIT.
