@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
 import fs from "fs";
 import minimist from "minimist";
-import ts2latex from "./lib/ts2latex.mjs";
+import ts2latex from "./src/ts2latex.mjs";
 
 const path = minimist(process.argv.slice(2))._[0];
 const ext = /(?<=\.)[^.]*?$/;
