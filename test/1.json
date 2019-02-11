@@ -1,0 +1,57 @@
+{
+  "name": "alg:always",
+  "input": "Array of reals $x, y$ of size $n$",
+  "return": "Array of reals, size $n$",
+  "description": "'Always' operator. Resultant array is true up until $x_i$ is false.",
+  "arguments": [
+    {
+      "name": "x",
+      "type": "Array<number>"
+    },
+    {
+      "name": "y",
+      "type": null
+    }
+  ],
+  "functionName": "A",
+  "code": [
+    {
+      "elementType": "declaration",
+      "index": 219,
+      "name": "alpha",
+      "type": "boolean",
+      "rhs": "true"
+    },
+    {
+      "elementType": "assignment",
+      "index": 248,
+      "name": "alpha",
+      "rhs": "false"
+    },
+    {
+      "elementType": "forOfBlock",
+      "index": 264,
+      "item": "x_i",
+      "collection": "x",
+      "code": [
+        {
+          "elementType": "assignment",
+          "index": 0,
+          "name": "alpha",
+          "rhs": "x_i && alpha"
+        },
+        {
+          "elementType": "assignment",
+          "index": 26,
+          "name": "x_i",
+          "rhs": "Number(alpha)"
+        }
+      ]
+    },
+    {
+      "elementType": "returnStatement",
+      "index": 343,
+      "name": "x"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ts2latex",
+  "version": "1.0.0",
+  "description": "Convert TypeScript to LaTeX algorithm format",
+  "main": "lib/ts2latex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "latex",
+    "convert",
+    "format"
+  ],
+  "author": "mpoteat",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0"
+  }
+}
