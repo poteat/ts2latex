@@ -4,9 +4,12 @@
   "description": "Convert TypeScript to LaTeX algorithm format",
   "main": "dist/ts2latex.min.js",
   "browser": "browser/ts2latex.min.js",
+  "bin": {
+    "rollup": "./bin/rollup"
+  },
   "scripts": {
     "build": "node ./node_modules/rollup/bin/rollup -c",
-    "test": "node --experimental-modules cmd.mjs test/1.ts"
+    "test": "node --experimental-modules src/cmd.mjs test/1.ts"
   },
   "keywords": [
     "typescript",
@@ -15,6 +18,10 @@
     "format"
   ],
   "author": "mpoteat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poteat/ts2latex.git"
+  },
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.11",
