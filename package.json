@@ -5,7 +5,7 @@
   "main": "dist/ts2latex.min.js",
   "browser": "browser/ts2latex.min.js",
   "bin": {
-    "rollup": "./bin/rollup"
+    "ts2latex": "./cmd.mjs"
   },
   "scripts": {
     "build": "node ./node_modules/rollup/bin/rollup -c",
