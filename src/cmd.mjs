@@ -18,7 +18,8 @@ fs.readFile(path, "utf8", (err, data) => {
   }
   ts2latex(
     data,
-    latex => {
+    (err, latex) => {
+      if (err) throw err;
       console.log("LaTeX successfully generated!");
       let fullTexPath = path.replace(ext, "tex");
       let outDirectory = path.replace(dir, "");
@@ -26,7 +27,8 @@ fs.readFile(path, "utf8", (err, data) => {
         if (err) throw err;
       });
     },
-    json => {
+    (err, json) => {
+      if (err) throw err;
       console.log("JSON successfully generated!");
       fs.writeFile(
         path.replace(ext, "json"),

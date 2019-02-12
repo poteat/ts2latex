@@ -1,9 +1,9 @@
 import _ from "lodash";
 
 export default (data, latexCb, jsonCb = () => {}) => {
-  try {
-    let obj = {};
+  let obj = {};
 
+  try {
     let regex = {
       commentBlock: /^\/\*\*[^]*\*\/\n?/m,
       name: /^ \* @name (.*)$/m,
@@ -18,37 +18,6 @@ export default (data, latexCb, jsonCb = () => {}) => {
       assignment: /^[ \t]*([\S]+) = (.+?);?$/m,
       returnStatement: /^[ \t]*return ([\S]+?);?$/m,
       statement: /^ *[^]+?$/m
-    };
-
-    let latex = {
-      header:
-        "\\begin{algorithm}[ht]\n\\SetKwInOut{Input}{Input}\n\\SetKwInOut{Output}{Output}\n",
-      functionBegin: "\\underline{function ",
-      functionMid: "} $(",
-      functionEnd: ")$\\;\n",
-      inputBegin: "\\Input{",
-      inputEnd: "}\n",
-      outputBegin: "\\Output{",
-      outputEnd: "}\n",
-      declarationBegin: "$",
-      declarationMid: " = ",
-      declarationEnd: "$\\;\n",
-      typeBegin: "\\tt{",
-      typeEnd: "}: ",
-      forOfBegin: "\\For{$",
-      forOfMid: " \\in ",
-      forOfEnd: "$}{\n",
-      forOfBlockEnd: "} ",
-      returnBegin: "return $",
-      returnEnd: "$\\;\n",
-      assignmentBegin: "$",
-      assignmentMid: " = ",
-      assignmentEnd: "$\\;\n",
-      descriptionBegin: "\\caption{",
-      descriptionEnd: "}\n",
-      labelBegin: "\\label{",
-      labelEnd: "}\n",
-      footer: "\\end{algorithm}\n"
     };
 
     let matchSet = (s, expr, f) => {
@@ -152,12 +121,46 @@ export default (data, latexCb, jsonCb = () => {}) => {
   } catch (err) {
     jsonCb(err, obj);
     latexCb(err, null);
+    return;
   }
 
   jsonCb(null, obj);
 
+  let out = "";
+
   try {
-    let out = latex.header;
+    let latex = {
+      header:
+        "\\begin{algorithm}[ht]\n\\SetKwInOut{Input}{Input}\n\\SetKwInOut{Output}{Output}\n",
+      functionBegin: "\\underline{function ",
+      functionMid: "} $(",
+      functionEnd: ")$\\;\n",
+      inputBegin: "\\Input{",
+      inputEnd: "}\n",
+      outputBegin: "\\Output{",
+      outputEnd: "}\n",
+      declarationBegin: "$",
+      declarationMid: " = ",
+      declarationEnd: "$\\;\n",
+      typeBegin: "\\tt{",
+      typeEnd: "}: ",
+      forOfBegin: "\\For{$",
+      forOfMid: " \\in ",
+      forOfEnd: "$}{\n",
+      forOfBlockEnd: "} ",
+      returnBegin: "return $",
+      returnEnd: "$\\;\n",
+      assignmentBegin: "$",
+      assignmentMid: " = ",
+      assignmentEnd: "$\\;\n",
+      descriptionBegin: "\\caption{",
+      descriptionEnd: "}\n",
+      labelBegin: "\\label{",
+      labelEnd: "}\n",
+      footer: "\\end{algorithm}\n"
+    };
+
+    out += latex.header;
     out += latex.functionBegin + obj.functionName + latex.functionMid;
     out += _.flatMap(obj.arguments, "name").join(", ");
     out += latex.functionEnd;
@@ -229,6 +232,7 @@ export default (data, latexCb, jsonCb = () => {}) => {
     out += latex.footer;
   } catch (err) {
     latexCb(err, out);
+    return;
   }
 
   latexCb(null, out);
